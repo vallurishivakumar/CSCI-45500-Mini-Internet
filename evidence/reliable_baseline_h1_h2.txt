@@ -1,0 +1,24 @@
+# Reliable UDP Baseline Test – H1 to H2
+
+**Date:** November 12, 2026
+
+**Configuration:**
+- Packet loss: 0%
+- Delay: 0 ms
+- Direction: H1 to H2
+- Packets attempted: 20
+
+**Sender results:**
+- Successfully acknowledged: 20
+- Failed packets: 0
+- Retransmissions: 0
+- Success rate: 100%
+
+**Receiver verification:**
+- First sequence ID: 3001
+- Last sequence ID: 3020
+- New DATA packets processed: 20
+- ACK responses sent: 20
+- Duplicate DATA packets: 0
+
+**Observation:** H2 received and processed all 20 DATA packets in ascending sequence order. H1 received acknowledgments for all 20 packets without retransmissions.
