@@ -1,0 +1,37 @@
+# Routing Test Evidence
+
+## Test 1: Original Lower Route
+
+Date: November 12, 2026
+
+Forward path: H1 → R1 → R3 → R4 → H2
+
+Result: PASSED
+
+H1 successfully sent a PROBE packet to H2 and received the matching ECHO response.
+
+Message ID: 1001
+
+Payload: Hello from H1
+
+The return path was verified in the network log:
+
+H2 → R4 → R3 → R1 → H1
+
+## Test 2: Alternate Upper Route
+
+Date: November 12, 2026
+
+Forward path: H1 → R1 → R2 → R4 → H2
+
+Result: PASSED
+
+H1 successfully sent a PROBE packet to H2 and received the matching ECHO response.
+
+Message ID: 1001
+
+The network log confirmed that R1 forwarded the packet to R2 and R2 forwarded it to R4.
+
+## Conclusion
+
+Both forwarding paths were tested successfully. The original lower route was restored after testing the alternate upper route.

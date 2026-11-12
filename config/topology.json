@@ -75,7 +75,7 @@
     }
   },
     "network_conditions": {
-    "packet_loss_percent": 10,
+    "packet_loss_percent": 0,
     "delay_ms": 0
   }
 }
