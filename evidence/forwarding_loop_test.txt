@@ -1,0 +1,22 @@
+2026-11-12T11:26:07.522 | SEND | Node=H1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R1 | HopLimit=10 | Details=PROBE packet sent
+2026-11-12T11:26:07.522 | RECEIVE | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=10 | Details=Received from UDP ('127.0.0.1', 5001)
+2026-11-12T11:26:07.522 | FORWARD | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R2 | HopLimit=9 | Details=Packet forwarded successfully
+2026-11-12T11:26:07.522 | RECEIVE | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=9 | Details=Received from UDP ('127.0.0.1', 5002)
+2026-11-12T11:26:07.529 | FORWARD | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R1 | HopLimit=8 | Details=Packet forwarded successfully
+2026-11-12T11:26:07.529 | RECEIVE | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=8 | Details=Received from UDP ('127.0.0.1', 5003)
+2026-11-12T11:26:07.533 | FORWARD | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R2 | HopLimit=7 | Details=Packet forwarded successfully
+2026-11-12T11:26:07.533 | RECEIVE | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=7 | Details=Received from UDP ('127.0.0.1', 5002)
+2026-11-12T11:26:07.535 | FORWARD | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R1 | HopLimit=6 | Details=Packet forwarded successfully
+2026-11-12T11:26:07.535 | RECEIVE | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=6 | Details=Received from UDP ('127.0.0.1', 5003)
+2026-11-12T11:26:07.538 | FORWARD | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R2 | HopLimit=5 | Details=Packet forwarded successfully
+2026-11-12T11:26:07.538 | RECEIVE | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=5 | Details=Received from UDP ('127.0.0.1', 5002)
+2026-11-12T11:26:07.541 | FORWARD | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R1 | HopLimit=4 | Details=Packet forwarded successfully
+2026-11-12T11:26:07.541 | RECEIVE | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=4 | Details=Received from UDP ('127.0.0.1', 5003)
+2026-11-12T11:26:07.545 | FORWARD | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R2 | HopLimit=3 | Details=Packet forwarded successfully
+2026-11-12T11:26:07.546 | RECEIVE | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=3 | Details=Received from UDP ('127.0.0.1', 5002)
+2026-11-12T11:26:07.549 | FORWARD | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R1 | HopLimit=2 | Details=Packet forwarded successfully
+2026-11-12T11:26:07.547 | RECEIVE | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=2 | Details=Received from UDP ('127.0.0.1', 5003)
+2026-11-12T11:26:07.551 | FORWARD | Node=R1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop=R2 | HopLimit=1 | Details=Packet forwarded successfully
+2026-11-12T11:26:07.551 | RECEIVE | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=1 | Details=Received from UDP ('127.0.0.1', 5002)
+2026-11-12T11:26:07.554 | DROP | Node=R2 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit=1 | Details=Hop limit exhausted
+2026-11-12T11:26:12.529 | TIMEOUT | Node=H1 | MessageID=1001 | Type=PROBE | Source=H1 | Destination=H2 | NextHop= | HopLimit= | Details=Response timeout after 5 seconds
