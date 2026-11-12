@@ -1,0 +1,9 @@
+﻿EXPERIMENT: Best-effort UDP with 5% packet loss and 50 ms delay
+
+Total individual attempts: 20
+Successful ECHO responses: 14
+Timed-out attempts: 6
+Success rate: 70.00%
+Retransmissions: 0
+
+Observation: Best-effort UDP received 14 responses from 20 attempts. Six attempts timed out because no response arrived within 5 seconds. No retransmissions were performed.

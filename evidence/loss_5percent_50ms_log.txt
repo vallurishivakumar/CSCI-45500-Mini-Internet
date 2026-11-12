@@ -1,0 +1,15 @@
+﻿
+logs\network.log:10561:2026-11-12T10:48:44.550 | DROP | Node=R4 | MessageID=3004 | Type=ACK | Source=H2 | Destination=H1 | NextHop= | 
+HopLimit=10 | Details=Simulated packet loss (5.0%)
+logs\network.log:10623:2026-11-12T10:48:46.797 | DROP | Node=R3 | MessageID=3006 | Type=ACK | Source=H2 | Destination=H1 | NextHop= | 
+HopLimit=9 | Details=Simulated packet loss (5.0%)
+logs\network.log:10665:2026-11-12T10:48:48.690 | DROP | Node=R1 | MessageID=3007 | Type=ACK | Source=H2 | Destination=H1 | NextHop= | 
+HopLimit=8 | Details=Simulated packet loss (5.0%)
+logs\network.log:10686:2026-11-12T10:48:50.208 | DROP | Node=R1 | MessageID=3007 | Type=ACK | Source=H2 | Destination=H1 | NextHop= | 
+HopLimit=8 | Details=Simulated packet loss (5.0%)
+logs\network.log:10764:2026-11-12T10:48:52.627 | DROP | Node=R4 | MessageID=3010 | Type=ACK | Source=H2 | Destination=H1 | NextHop= | 
+HopLimit=10 | Details=Simulated packet loss (5.0%)
+logs\network.log:10919:2026-11-12T10:48:56.311 | DROP | Node=R1 | MessageID=3017 | Type=DATA | Source=H1 | Destination=H2 | NextHop= | 
+HopLimit=10 | Details=Simulated packet loss (5.0%)
+
+

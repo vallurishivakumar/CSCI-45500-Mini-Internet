@@ -1,0 +1,9 @@
+﻿EXPERIMENT: Reliable UDP with 5% packet loss and 50 ms delay
+
+Total packets attempted: 20
+Successfully acknowledged: 20
+Failed packets: 0
+Retransmissions: 6
+Success rate: 100.00%
+
+Observation: All 20 packets were acknowledged. Six retransmissions occurred under the configured 5% packet loss and 50 ms delay conditions.

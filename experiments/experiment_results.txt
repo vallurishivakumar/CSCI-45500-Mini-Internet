@@ -163,7 +163,7 @@ The reliable Stop-and-Wait transfer achieved 100% success in both initial tests.
 
 **Observation:** Reliable UDP successfully acknowledged every packet without retransmissions under the 0% packet-loss condition.
 
-## Experiment 7: Unreachable Host and Bounded Retry Test
+## Experiment 7: Destination Receiver Unavailable and Bounded Retry Test
 
 **Configuration:** One DATA packet, 1-second ACK timeout, and maximum 2 retransmissions. The destination host was not listening.
 

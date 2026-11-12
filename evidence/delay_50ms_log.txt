@@ -1,0 +1,43 @@
+﻿
+logs\network.log:10416:2026-11-12T10:44:24.270 | DELAY | Node=R3 | MessageID=3017 | Type=ACK | Source=H2 | Destination=H1 | NextHop=R1 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10419:2026-11-12T10:44:24.325 | DELAY | Node=R1 | MessageID=3017 | Type=ACK | Source=H2 | Destination=H1 | NextHop=H1 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10424:2026-11-12T10:44:24.382 | DELAY | Node=R1 | MessageID=3018 | Type=DATA | Source=H1 | Destination=H2 | NextHop=R3 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10427:2026-11-12T10:44:24.435 | DELAY | Node=R3 | MessageID=3018 | Type=DATA | Source=H1 | Destination=H2 | NextHop=R4 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10430:2026-11-12T10:44:24.488 | DELAY | Node=R4 | MessageID=3018 | Type=DATA | Source=H1 | Destination=H2 | NextHop=H2 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10435:2026-11-12T10:44:24.549 | DELAY | Node=R4 | MessageID=3018 | Type=ACK | Source=H2 | Destination=H1 | NextHop=R3 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10438:2026-11-12T10:44:24.602 | DELAY | Node=R3 | MessageID=3018 | Type=ACK | Source=H2 | Destination=H1 | NextHop=R1 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10441:2026-11-12T10:44:24.657 | DELAY | Node=R1 | MessageID=3018 | Type=ACK | Source=H2 | Destination=H1 | NextHop=H1 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10446:2026-11-12T10:44:24.713 | DELAY | Node=R1 | MessageID=3019 | Type=DATA | Source=H1 | Destination=H2 | NextHop=R3 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10449:2026-11-12T10:44:24.766 | DELAY | Node=R3 | MessageID=3019 | Type=DATA | Source=H1 | Destination=H2 | NextHop=R4 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10452:2026-11-12T10:44:24.823 | DELAY | Node=R4 | MessageID=3019 | Type=DATA | Source=H1 | Destination=H2 | NextHop=H2 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10457:2026-11-12T10:44:24.877 | DELAY | Node=R4 | MessageID=3019 | Type=ACK | Source=H2 | Destination=H1 | NextHop=R3 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10460:2026-11-12T10:44:24.936 | DELAY | Node=R3 | MessageID=3019 | Type=ACK | Source=H2 | Destination=H1 | NextHop=R1 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10463:2026-11-12T10:44:24.989 | DELAY | Node=R1 | MessageID=3019 | Type=ACK | Source=H2 | Destination=H1 | NextHop=H1 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10468:2026-11-12T10:44:25.048 | DELAY | Node=R1 | MessageID=3020 | Type=DATA | Source=H1 | Destination=H2 | NextHop=R3 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10471:2026-11-12T10:44:25.105 | DELAY | Node=R3 | MessageID=3020 | Type=DATA | Source=H1 | Destination=H2 | NextHop=R4 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10474:2026-11-12T10:44:25.157 | DELAY | Node=R4 | MessageID=3020 | Type=DATA | Source=H1 | Destination=H2 | NextHop=H2 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10479:2026-11-12T10:44:25.212 | DELAY | Node=R4 | MessageID=3020 | Type=ACK | Source=H2 | Destination=H1 | NextHop=R3 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10482:2026-11-12T10:44:25.271 | DELAY | Node=R3 | MessageID=3020 | Type=ACK | Source=H2 | Destination=H1 | NextHop=R1 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+logs\network.log:10485:2026-11-12T10:44:25.326 | DELAY | Node=R1 | MessageID=3020 | Type=ACK | Source=H2 | Destination=H1 | NextHop=H1 | 
+HopLimit= | Details=Simulated delay of 50.0 ms
+
+
