@@ -105,19 +105,49 @@ All team members participated in testing, debugging, integration, and documentat
 
 ## Running the Project
 
-Use Python 3 and activate the project's virtual environment before running the programs.
+Use Python 3 and activate the project's virtual environment before running the programs. Open separate PowerShell terminals for the routers and hosts. Run all commands from the main project directory.
 
-Start the routers in separate terminals using the project router startup commands. Start the destination host listener:
+### 1. Start the Routers
+
+Start each router in a separate terminal:
+
+```powershell
+python src/router.py R1
+```
+
+```powershell
+python src/router.py R2
+```
+
+```powershell
+python src/router.py R3
+```
+
+```powershell
+python src/router.py R4
+```
+
+Keep all four router terminals running while performing network tests.
+
+### 2. Start the Destination Host
+
+Open another terminal and start H2 in listening mode:
 
 ```powershell
 python src/host.py H2 --listen
 ```
 
-Run a basic connectivity test from H1 to H2:
+Keep H2 running so it can receive packets from H1 and send responses.
+
+### 3. Test Basic Connectivity
+
+Open another terminal and run a basic connectivity test from H1 to H2:
 
 ```powershell
 python src/host.py H1 H2
 ```
+
+### 4. Test Reliable UDP Transfer
 
 Run reliable transfer with 20 DATA packets:
 
@@ -131,7 +161,9 @@ The reverse-direction reliable transfer can be tested using:
 python src/host.py H2 H1 --reliable --count 20
 ```
 
-The existing test programs can also be run individually:
+### 5. Run the Test Programs
+
+The following test programs can be executed individually to verify network functionality and packet handling:
 
 ```powershell
 python src/test_network.py
@@ -140,6 +172,10 @@ python src/test_invalid_packet.py
 python src/test_oversized_packet.py
 python src/test_unknown_destination.py
 ```
+
+### 6. Stop the Processes
+
+After completing the tests, stop the running routers and host processes by pressing `Ctrl+C` in their respective terminals.
 
 ## Known Limitations
 
