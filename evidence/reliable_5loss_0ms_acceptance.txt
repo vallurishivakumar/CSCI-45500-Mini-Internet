@@ -1,0 +1,25 @@
+# Reliable UDP Acceptance Test – 5% Packet Loss, 0 ms Delay
+  
+**Direction:** H1 to H2  
+**Packets attempted:** 20  
+**Configuration:** 5% packet loss, 0 ms delay
+
+## Sender Results
+
+- Successfully acknowledged: 20
+- Failed packets: 0
+- Retransmissions: 8
+- Success rate: 100%
+
+## Receiver Results
+
+- Unique DATA packets processed: 20
+- Duplicate DATA packets detected: 4
+- Duplicate ACK responses sent: 4
+- Message IDs with duplicate DATA: 3002, 3004, 3008, 3017
+
+## Observation
+
+All 20 DATA messages were successfully acknowledged. H2 detected four duplicate DATA messages and sent ACK responses again without processing those messages a second time. The sender completed the transfer with eight retransmissions.
+
+**Conclusion:** The test demonstrates successful reliable transfer and duplicate detection under simulated random packet loss. It does not independently verify a deliberately dropped final ACK or a deliberately selected DATA packet.

@@ -1,0 +1,14 @@
+# Best-Effort UDP Results – Run 3
+ 
+**Direction:** H1 to H2  
+**Configuration:** 0% packet loss, 50 ms delay
+
+- Total PROBE packets: 20
+- Successful ECHO responses: 20
+- Failed probes: 0
+- Success rate: 100%
+- Retransmissions: 0
+
+**Observation:** All 20 PROBE packets received ECHO responses from H2. No failures were observed during this run.
+
+**Conclusion:** Best-effort communication completed successfully under 0% packet loss and 50 ms delay in this run.

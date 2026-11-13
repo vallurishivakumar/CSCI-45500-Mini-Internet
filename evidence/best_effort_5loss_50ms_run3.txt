@@ -1,0 +1,15 @@
+# Best-Effort UDP Results – 5% Packet Loss, 50 ms Delay – Run 3
+
+Direction: H1 to H2
+Total PROBE packets: 20
+Successful ECHO responses: 20
+Failed probes: 0
+Success rate: 100%
+
+Configuration: 5% packet loss, 50 ms delay.
+
+Observation:
+All 20 PROBE packets received ECHO responses from H2. No failures were observed in this run.
+
+Conclusion:
+Best-effort communication completed successfully in this run, despite the configured 5% random packet-loss condition.

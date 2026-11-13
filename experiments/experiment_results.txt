@@ -217,3 +217,130 @@ The reliable Stop-and-Wait transfer achieved 100% success in both initial tests.
 **Overall observation:** Under 0% packet loss, both methods achieved 100% success. Under 5% configured packet loss, best-effort communication delivered 38 of 60 probes, while reliable UDP acknowledged all 60 DATA packets using 14 retransmissions. These results demonstrate the benefit of acknowledgments and retransmissions for improving delivery reliability.
 
 **Experiment limitations:** The best-effort tests used PROBE/ECHO packets, while reliable tests used DATA/ACK packets. The tests were not fully identical in packet type or sending behavior. Elapsed time, throughput, and a controlled sending rate were not measured. Deliberately dropping one DATA packet and one ACK packet was not tested separately. The results should therefore be interpreted as an observed comparison rather than a fully controlled performance evaluation.
+
+## Experiment 10: Best-Effort UDP Transfer
+
+**Test conditions:** 0% configured packet loss, 50 ms delay
+
+**Total runs:** 3
+
+**Packets per run:** 20
+
+- Run 1: 20 successful, 0 failed (100%)
+- Run 2: 20 successful, 0 failed (100%)
+- Run 3: 20 successful, 0 failed (100%)
+
+**Combined results:**
+- Total probes: 60
+- Successful ECHO responses: 60
+- Failed probes: 0
+- Average success rate: 100%
+
+**Observation:** All 60 PROBE packets received ECHO responses under the 0% packet-loss and 50 ms delay condition.
+
+## Experiment 11: Reliable UDP Transfer
+
+**Test conditions:** 0% configured packet loss, 50 ms delay
+
+**Total runs:** 3
+
+**Packets per run:** 20
+
+- Run 1: 20 acknowledged, 0 failed, 0 retransmissions
+- Run 2: 20 acknowledged, 0 failed, 0 retransmissions
+- Run 3: 20 acknowledged, 0 failed, 0 retransmissions
+
+**Combined results:**
+- Total DATA packets: 60
+- Successfully acknowledged: 60
+- Failed packets: 0
+- Total retransmissions: 0
+- Average success rate: 100%
+
+**Observation:** All DATA packets were acknowledged without retransmissions.
+
+## Experiment 12: Best-Effort UDP Transfer
+
+**Test conditions:** 5% configured packet loss, 50 ms delay
+
+**Total runs:** 3
+
+**Packets per run:** 20
+
+- Run 1: 20 successful, 0 failed (100%)
+- Run 2: 20 successful, 0 failed (100%)
+- Run 3: 20 successful, 0 failed (100%)
+
+**Combined results:**
+- Total probes: 60
+- Successful ECHO responses: 60
+- Failed probes: 0
+- Average success rate: 100%
+
+**Observation:** All 60 PROBE packets received ECHO responses. The configured random packet-loss rate does not guarantee that a packet will be dropped in every small test.
+
+**Additional preliminary run:** An earlier 20-packet run under the same configuration recorded 14 successful ECHO responses and 6 failures (70% success). This result is retained separately and is not included in the three-run total above.
+
+## Experiment 13: Reliable UDP Transfer
+
+**Test conditions:** 5% configured packet loss, 50 ms delay
+
+**Total runs:** 3
+
+**Packets per run:** 20
+
+- Run 1: 20 acknowledged, 0 failed, 6 retransmissions
+- Run 2: 20 acknowledged, 0 failed, 0 retransmissions
+- Run 3: 20 acknowledged, 0 failed, 0 retransmissions
+
+**Combined results:**
+- Total DATA packets: 60
+- Successfully acknowledged: 60
+- Failed packets: 0
+- Total retransmissions: 6
+- Average retransmissions per run: 2
+- Average success rate: 100%
+
+**Observation:** Reliable UDP acknowledged all 60 DATA packets. Six retransmissions occurred in the first run, while the remaining two runs completed without retransmissions.
+
+## Experiment 14: Reliable UDP Performance Measurement
+
+**Test conditions:** 5% configured packet loss, 50 ms delay
+
+**Packets attempted:** 20
+
+**Results:**
+- Successfully acknowledged: 20
+- Failed packets: 0
+- Retransmissions: 0
+- Success rate: 100%
+- Total elapsed time: 7.788 seconds
+- Average time per packet: approximately 0.389 seconds
+- Application-level throughput: approximately 2.57 packets per second
+
+**Measurement method:** PowerShell Measure-Command measured the complete execution time of the sender process.
+
+**Limitation:** This is one measured run. The elapsed time includes application execution and network processing, so it is not a measurement of pure network latency.
+
+## Updated Overall Experiment Comparison
+
+The following table summarizes the three repeated runs for each test condition.
+
+| Test condition | Best-effort UDP | Reliable UDP |
+|---|---:|---:|
+| 0% loss, 0 ms delay | 60/60 (100%) | 60/60 (100%) |
+| 5% loss, 0 ms delay | 38/60 (63.33%) | 60/60 (100%) |
+| 0% loss, 50 ms delay | 60/60 (100%) | 60/60 (100%) |
+| 5% loss, 50 ms delay | 60/60 (100%) | 60/60 (100%) |
+
+For the 5% loss and 50 ms delay condition, the reliable UDP runs required 6 total retransmissions across 60 DATA packets. The three repeated best-effort runs had no observed failures. An earlier separate best-effort run under the same configuration recorded 14 successful responses out of 20.
+
+## Updated Experiment Limitations
+
+The best-effort tests used PROBE/ECHO packets, while reliable UDP tests used DATA/ACK packets. Therefore, the comparison is not a perfectly controlled comparison of identical packet types or sending behavior.
+
+Packet loss was randomly simulated. A configured 5% loss rate does not mean exactly 5% of packets will be dropped in every small test. No random seed was recorded.
+
+One reliable UDP performance measurement was completed under 5% packet loss and 50 ms delay. It took 7.788 seconds for 20 packets, approximately 2.57 packets per second. This is a single application-level measurement, not an average across repeated trials or a pure network-latency measurement.
+
+Deliberately dropping a selected DATA packet and a selected ACK packet was not tested separately. The results should be understood as observations from the implemented test conditions rather than a complete controlled network-performance evaluation.

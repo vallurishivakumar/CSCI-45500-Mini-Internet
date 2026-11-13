@@ -1,0 +1,20 @@
+# Reliable UDP Results – 5% Packet Loss, 50 ms Delay – Run 3
+
+Direction: H1 to H2
+Total DATA packets attempted: 20
+Successfully acknowledged: 20
+Failed packets: 0
+Retransmissions: 0
+Success rate: 100%
+
+Configuration:
+Packet loss: 5%
+Network delay: 50 ms
+ACK timeout: 1.5 seconds
+Maximum retransmissions per packet: 5
+
+Observation:
+All 20 DATA packets received matching ACK responses from H2 on the first attempt. No retransmissions or failures occurred.
+
+Conclusion:
+Reliable UDP transfer completed successfully in this run under the configured 5% random packet-loss condition and 50 ms delay.

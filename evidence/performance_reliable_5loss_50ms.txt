@@ -1,0 +1,25 @@
+# Performance Measurement – Reliable UDP
+
+Direction: H1 to H2
+Configuration:
+Packet loss: 5%
+Network delay: 50 ms
+Packets attempted: 20
+
+Results:
+Successfully acknowledged: 20
+Failed packets: 0
+Retransmissions: 0
+Success rate: 100%
+Total elapsed time: 7.788 seconds
+Average time per packet: 0.389 seconds
+Application-level throughput: 2.57 packets per second
+
+Measurement method:
+PowerShell Measure-Command was used to measure the complete execution time of the reliable UDP sender.
+
+Observation:
+All 20 packets were acknowledged without retransmissions. The measured execution time was 7.788 seconds.
+
+Limitation:
+This is one measurement, not an average across multiple trials. The elapsed time includes application execution and network processing, so it should not be interpreted as pure network latency.
