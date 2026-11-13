@@ -107,36 +107,33 @@ The available tests demonstrate successful transfers and recovery from some rand
 
 ## Testing and Experiment Results
 
-The project was tested using different packet-loss and delay configurations.
+The project was tested under four network conditions: 0% and 5% configured packet loss, each with 0 ms and 50 ms configured delay. Three runs of 20 packets were recorded for each main condition and communication method.
 
 ### Results at 0 ms Delay
 
-Three runs were recorded for each transfer method under the 0% and 5% configured packet-loss conditions.
-
-| Test condition | Best-effort | Reliable UDP |
+| Test condition | Best-effort UDP | Reliable UDP |
 |---|---:|---:|
 | 0% packet loss | 60/60 (100%) | 60/60 (100%) |
 | 5% packet loss | 38/60 (63.33%) | 60/60 (100%) |
 
 At 5% configured packet loss, reliable UDP used 14 retransmissions across three runs and acknowledged all 60 DATA packets.
 
-### Preliminary Results at 50 ms Delay
+### Results at 50 ms Delay
 
-Additional single-run tests were recorded under 50 ms configured delay and 5% configured packet loss.
-
-| Measurement | Best-effort | Reliable UDP |
+| Test condition | Best-effort UDP | Reliable UDP |
 |---|---:|---:|
-| Packets attempted | 20 | 20 |
-| Successful responses/ACKs | 14 | 20 |
-| Failed/timeouts | 6 | 0 |
-| Success rate | 70% | 100% |
-| Retransmissions | 0 | 6 |
+| 0% packet loss | 60/60 (100%) | 60/60 (100%) |
+| 5% packet loss | 60/60 (100%) | 60/60 (100%) |
 
-These results are preliminary and represent one recorded run for each method.
-
-The complete repeated experiment matrix at 50 ms delay has not been completed. The current results also do not include recorded random seeds, RTT measurements, or RTT mean and spread.
+At 5% packet loss and 50 ms delay, reliable UDP used six retransmissions across three runs and acknowledged all 60 DATA packets. An earlier separate best-effort run under the same settings delivered 14 of 20 packets (70%). This difference shows that results can vary because packet loss is randomly applied. The earlier run is reported separately and is not included in the three-run total.
 
 The best-effort and reliable tests use different message types: PROBE/ECHO and DATA/ACK. Therefore, the results are an observed comparison rather than a fully controlled performance evaluation.
+
+### Performance Measurement
+
+One performance measurement was completed for reliable UDP under 5% packet loss and 50 ms delay. The sender transmitted 20 packets and received all 20 acknowledgments. The total measured execution time was 7.788 seconds, with an average of approximately 0.389 seconds per packet and application-level throughput of approximately 2.57 packets per second.
+
+This measurement includes application execution and network processing. It is not a direct measurement of network latency. Only one performance measurement was collected.
 
 ### Additional Tests
 
@@ -149,9 +146,10 @@ Additional tests included:
 - Oversized packet rejection.
 - Unknown destination handling.
 - Bounded retransmission when the destination host was not listening.
-- Reliable transfer under configured packet loss and delay.
+- Reliable transfer under different packet-loss and delay conditions.
+- Duplicate DATA detection and acknowledgment handling.
 
-Detailed experiment summaries are available in `experiments/experiment_results.txt`.
+Detailed experiment summaries and individual run evidence are available in `experiments/experiment_results.txt` and the `evidence/` directory.
 
 ## Evidence and Wireshark
 
@@ -319,11 +317,11 @@ After completing the tests, stop the running routers and host processes by press
 The current implementation has the following limitations:
 
 - Packet loss and delay settings apply globally at routers rather than to selected individual links.
-- Random seeds are not recorded.
+- Random seeds are not recorded, so repeated random-loss results may vary.
 - Delay uses a blocking sleep operation and may temporarily prevent a router from handling other packets.
-- The complete repeated experiment matrix at 50 ms delay has not been completed.
-- RTT measurements, RTT mean and spread, elapsed time, throughput, and controlled sending rate were not measured.
-- Best-effort PROBE/ECHO and reliable DATA/ACK tests use different packet types.
+- Best-effort PROBE/ECHO and reliable DATA/ACK tests use different packet types and sending behavior.
+- Only one elapsed-time and throughput measurement was collected; additional measurements are needed for a stronger performance evaluation.
+- RTT measurements, RTT mean and spread, and controlled sending-rate measurements were not collected.
 - Deliberate dropping of a specific DATA packet and final ACK packet has not been tested separately.
 - The receiver does not implement a bounded post-transfer acknowledgment grace period.
 - The bounded retry test demonstrated failure when the destination host was not listening, rather than when a forwarding route was missing.
@@ -336,9 +334,9 @@ These limitations should be considered when interpreting the experiment results 
 
 https://github.com/vallurishivakumar/CSCI-45500-Mini-Internet
 
-**Audited commit:** `1680aee` — updated README file.
+**Final audited commit:** `49d9447` – Add final experiment results and evidence.
 
-The local `main` branch was verified to match `origin/main` at this commit during the project audit.
+The local `main` branch was verified to match `origin/main` after this commit was pushed successfully.
 
 ## Conclusion
 
